@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "ios": "react-native run-ios",
+    "android": "react-native run-android"
   },
   "dependencies": {
     "react": "16.3.1",
@@ -13,6 +15,8 @@
   "devDependencies": {
     "babel-jest": "22.4.3",
     "babel-preset-react-native": "4.0.0",
+    "babel-preset-react-native-stage-0": "^1.0.1",
+    "babel-root-import": "^4.1.8",
     "jest": "22.4.3",
     "react-test-renderer": "16.3.1"
   },
