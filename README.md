@@ -17,6 +17,7 @@ App made for the react native training.
   - SDK Tools:
     - 23.0.1
   - An Android Virtual Device (AVD) runing the _Marshmallow/23_ image.
+- FacebookSDK.
 
 ## Development
 

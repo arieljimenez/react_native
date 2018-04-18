@@ -3,7 +3,6 @@ package com.pomodoro;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
-import com.facebook.reactnative.androidsdk.FBSDKPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -11,6 +10,10 @@ import com.facebook.soloader.SoLoader;
 
 import java.util.Arrays;
 import java.util.List;
+
+import com.facebook.CallbackManager;
+import com.facebook.FacebookSdk;
+import com.facebook.reactnative.androidsdk.FBSDKPackage;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -24,7 +27,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new FBSDKPackage()
+          new FBSDKPackage(mCallbackManager)
       );
     }
 
@@ -39,9 +42,16 @@ public class MainApplication extends Application implements ReactApplication {
     return mReactNativeHost;
   }
 
+  private static CallbackManager mCallbackManager = CallbackManager.Factory.create();
+
+  protected static CallbackManager getCallbackManager() {
+    return mCallbackManager;
+  }
+
   @Override
   public void onCreate() {
     super.onCreate();
-    SoLoader.init(this, /* native exopackage */ false);
+    // SoLoader.init(this, /* native exopackage */ false);
+    FacebookSdk.sdkInitialize(getApplicationContext());
   }
 }
