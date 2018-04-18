@@ -12,6 +12,8 @@ import {
   View
 } from 'react-native';
 
+import { LoginButton } from 'react-native-fbsdk';
+
 const instructions = Platform.select({
   ios: 'Hello iOS World',
   android: 'Hello Andoid World',
@@ -25,6 +27,11 @@ export default class App extends Component<Props> {
         <Text style={styles.iwelcome}>
           {instructions}
         </Text>
+        <LoginButton
+          onLoginFinished={() => ({})}
+          onLogoutFinished={() => ({})}
+          defaultAudience='everyone'
+        />
       </View>
     );
   }
