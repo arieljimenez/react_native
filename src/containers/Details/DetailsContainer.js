@@ -4,7 +4,7 @@ import { View, Text } from 'react-native';
 import { LoginButton } from 'react-native-fbsdk';
 import { Styles } from '~/Styles'
 
-export default class DetailsView extends Component {
+export default class DetailsContainer extends Component {
   render() {
     return (
       <View style={Styles.container}>
@@ -15,3 +15,4 @@ export default class DetailsView extends Component {
     );
   }
 }
+

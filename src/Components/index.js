@@ -1,1 +1,1 @@
-export Laa from './Laa'
+export Splash from "./Splash/Splash";

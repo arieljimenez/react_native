@@ -29,3 +29,4 @@ App made for the react native training.
     - Open the project in Android Studio
     - Open our configurated _AVD_.
     - Run `$ react-native run-android`
+    - Or, after create your AVD, crete an alias, like: `alias ${YOUR_AWESOME_ALIAS}='~/Library/Android/sdk/tools/emulator -avd ${AVD_NAME} &'`. So, to run android _simulator_ just run your alias.
