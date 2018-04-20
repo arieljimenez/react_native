@@ -1,42 +1,62 @@
-import React, { Component } from 'react';
-import { Platform, StyleSheet, Button, Text, View } from 'react-native';
-import { LoginButton } from 'react-native-fbsdk';
+import React, { Component } from 'react'
+import { Platform, StyleSheet, Image, Button, Text, View, Dimensions } from 'react-native'
+import { LoginButton } from 'react-native-fbsdk'
+import PropTypes from 'prop-types'
 
-const instructions = Platform.select({
-  ios: 'Hello iOS World',
-  android: 'Hello Andoid World',
-});
+import { Styles, colors, fontSizes } from '~/styles'
+// const instructions = Platform.select({
+//   ios: 'Hello iOS World',
+//   android: 'Hello Andoid World',
+// });
+
+const { height, width } = Dimensions.get('window')
+
+Splash.propTypes = {
+  onLoginFinished: PropTypes.func.isRequired,
+}
 
 export default function Splash(props) {
   return (
-    <View style={styles.container}>
-      <Text style={styles.welcome}>
-        {instructions}
-      </Text>
-      <Button
-        title="Go to Details"
-        onPress={props.onpress}
-      />
-      <LoginButton
-        onLoginFinished={() => ({})}
-        onLogoutFinished={() => ({})}
-        defaultAudience='everyone'
-      />
+    <View style={Styles.container}>
+      <View>
+        <Image style={style.image} source={require('../../images/logo.png')} />
+        <Text style={style.slogan}>iPomodoro</Text>
+      </View>
+      <View style={style.loginContainer}>
+        <LoginButton
+          style={{
+            height: 30,
+            width: 190,
+            marginBottom: 15,
+          }}
+          onLoginFinished={props.onLoginFinished} />
+        <Text style={style.assuranteText}>
+          Dont worry, we will give good use to your data >:)
+        </Text>
+      </View>
     </View>
   )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
+const style = StyleSheet.create({
+  slogan: {
+    color: colors.blue,
+    fontSize: fontSizes.primary,
+    margin: 20,
+    textAlign: 'center'
+  },
+  image: {
+    resizeMode: 'contain',
+    height: height * .4 > 300 ? 300 : height * .4,
+  },
+  loginContainer: {
+    paddingLeft: 10,
+    paddingRight: 10,
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
+  assuranteText: {
+    color: colors.secondary,
+    fontSize: fontSizes.secondary,
     textAlign: 'center',
-    margin: 10,
-  },
+  }
 });
-

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 
-import { LoginButton } from 'react-native-fbsdk';
-import { Styles } from '~/Styles'
+import { Styles } from '~/styles'
 
 export default class DetailsContainer extends Component {
   render() {
