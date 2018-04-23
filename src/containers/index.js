@@ -1,4 +1,5 @@
-
-export Navigator from './Navigator/Navigator';
-export DetailsContainer  from "./Details/DetailsContainer";
-export SplashContainer  from "./Splash/SplashContainer";
+export Navigator from './Navigator/Navigator'
+export DetailsContainer from './Details/DetailsContainer'
+export SplashContainer from './Splash/SplashContainer'
+export AppContainer from './App/AppContainer'
+export FooterTabsContainer from './FooterTabs/FooterTabsContainer'
