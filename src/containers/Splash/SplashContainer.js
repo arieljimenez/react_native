@@ -1,8 +1,13 @@
 import React, { Component } from 'react'
 import { View, Text } from 'react-native'
-import { Splash } from '~/components'
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux'
+import Icon from 'react-native-vector-icons/Ionicons';
 
-export default class SplashContainer extends Component {
+import { Splash, PreSplash } from '~/components'
+import { TabNavigator } from '~/containers'
+
+class SplashContainer extends Component {
   handleLoginFinished = (error, result) => {
     if (error) {
       console.warn("Error in handleLoginFinished: ", error)
@@ -14,11 +19,27 @@ export default class SplashContainer extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
-      <Splash
-        onLoginFinished={this.handleLoginFinished}
-        onpress={() => this.props.navigation.navigate('Details')}
-      />
+      <View style={{ flex: 1 }}>
+        {this.props.isAuthenticating === false
+          ? <Splash
+            onLoginFinished={this.handleLoginFinished}
+            onpress={() => this.props.navigation.navigate('Details')} />
+          : <PreSplash />}
+      </View>
     )
   }
 }
+
+function mapStateToProps({ authentication }) {
+  return {
+    isAuthenticating: authentication.isAuthenticating,
+  }
+}
+
+SplashContainer = connect(
+  mapStateToProps
+)(SplashContainer)
+
+export default SplashContainer;

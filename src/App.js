@@ -3,7 +3,7 @@ import { createStore, applyMiddleware, combineReducers } from 'redux'
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 
-import { AppContainer } from '~/containers'
+import { TabsNavigator } from '~/containers'
 import * as reducers from '~/redux'
 
 const store = createStore(
@@ -15,7 +15,7 @@ export default class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
-        <AppContainer />
+        <TabsNavigator />
       </Provider>
     )
   }

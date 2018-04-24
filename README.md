@@ -22,6 +22,7 @@ App made for the react native training.
 ## Development
 
 - First, install dependencies: `$ yarn install`
+- Run `$ react-native link`, lo link the libraries to the project. If icons dont show up, run `$ react-native link react-native-vector-icons`.
 - To start the metro builder: `$ yarn start`
 - For mobile development:
   - iOS `$ react-native run-ios`
