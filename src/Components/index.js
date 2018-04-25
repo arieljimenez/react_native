@@ -1,3 +1,5 @@
 export Splash from './Splash/Splash'
 export PreSplash from './PreSplash/PreSplash'
 export Settings from './Settings/Settings'
+export Home from './Home/Home'
+export Leaderboard from './Leaderboard/Leaderboard'

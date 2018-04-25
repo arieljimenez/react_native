@@ -3,15 +3,19 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { TabNavigator, TabBarBottom } from 'react-navigation';
 
 import { Splash } from '~/components'
+import { colors } from '~/styles'
+
+import HomeContainer from '~/containers/Home/HomeContainer'
 import SplashContainer from '~/containers/Splash/SplashContainer'
 import DetailsContainer from '~/containers/Details/DetailsContainer'
 import SettingsContainer from '~/containers/Settings/SettingsContainer'
-import { colors } from '~/styles'
+import LeaderboardContainer from '~/containers/Leaderboard/LeaderboardContainer'
 
-const TabsNavigator = TabNavigator(
+
+export default TabsNavigator = TabNavigator(
   {
-    Home: { screen: SplashContainer },
-    Details: { screen: DetailsContainer },
+    Home: { screen: HomeContainer },
+    Leaderboard: { screen: LeaderboardContainer },
     Settings: { screen: SettingsContainer },
   },
   {
@@ -21,13 +25,13 @@ const TabsNavigator = TabNavigator(
         let iconName;
         if (routeName === 'Home') {
           iconName = `ios-home${focused ? '' : '-outline'}`;
-        } else if (routeName === 'Details') {
-          iconName = `ios-information-circle${focused ? '' : '-outline'}`;
+        } else if (routeName === 'Leaderboard') {
+          iconName = `ios-trophy${focused ? '' : '-outline'}`;
         } else if (routeName === 'Settings') {
           iconName = `ios-options${focused ? '' : '-outline'}`;
         }
 
-        return <Icon name={iconName} size={25} color={colors.blue} />;
+        return <Icon name={iconName} size={35} color={colors.blue} />;
       },
     }),
     tabBarComponent: TabBarBottom,
@@ -40,5 +44,3 @@ const TabsNavigator = TabNavigator(
     swipeEnabled: true,
   }
 );
-
-export default TabsNavigator;

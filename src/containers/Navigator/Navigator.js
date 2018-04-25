@@ -1,9 +1,9 @@
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
 
-import SplashContainer from '~/containers/Splash/SplashContainer';
-import DetailsContainer from '~/containers/Details/DetailsContainer'
 import AppContainer from '~/containers/App/AppContainer'
+import DetailsContainer from '~/containers/Details/DetailsContainer'
+import SplashContainer from '~/containers/Splash/SplashContainer'
 
 export default Navigator = StackNavigator(
   {
@@ -20,4 +20,4 @@ export default Navigator = StackNavigator(
   {
     initialRouteName: "App",
   }
-);
+)
