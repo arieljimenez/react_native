@@ -4,7 +4,7 @@ import { View, Text } from 'react-native'
 export default function Home(props) {
   return (
     <Text>
-      Home
+      Home !
     </Text>
   )
 }
