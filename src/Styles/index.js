@@ -26,8 +26,9 @@ export const colors = {
   secondary: '#929292',
   blue: '#004efe',
   border: '#3f3f3f',
-  tabPrimary: '#f7f9f9',
-  white: '#fff'
+  tabPrimary: '#004efe',
+  white: '#fff',
+  red: 'crimson'
 }
 
 export const fontSizes = {

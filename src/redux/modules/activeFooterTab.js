@@ -11,7 +11,7 @@ export function setFooterTab(tab) {
 const initialState = 'home'
 
 //reducers
-export default function activeFooterTabs(state = initialState, action) {
+export function activeFooterTabs(state = initialState, action) {
   switch (action.type) {
     case SET_FOOTER_TAB:
       return action.tab

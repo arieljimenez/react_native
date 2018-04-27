@@ -19,7 +19,6 @@ class SplashContainer extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <View>
         {this.props.isAuthenticating === false
@@ -38,6 +37,8 @@ function mapStateToProps({ authentication }) {
   }
 }
 
-export default SplashContainer = connect(
+SplashContainer = connect(
   mapStateToProps
 )(SplashContainer)
+
+export default SplashContainer;

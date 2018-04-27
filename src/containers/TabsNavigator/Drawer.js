@@ -1,41 +1,36 @@
-import React from 'react';
-import { Dimensions } from 'react-native'
-import { DrawerNavigator } from 'react-navigation'
+import React from 'react'
+import { View, StyleSheet, Text } from 'react-native'
 
-import { colors } from '~/styles'
-import { Home } from '~/components'
+import DrawerHeader from './DrawerHeader'
+import DrawerTab from './DrawerTab'
 
-// export default function Drawer(props) {
-//   return (
-//     <View>
-//       <Text>
-//         Drawer
-//       </Text>
-//     </View>
-//   )
-// }
+export default function Drawer(props) {
+  console.warn(props)
 
-export default Drawer = DrawerNavigator(
-  { //RouteConfigs
-    Home: {
-      screen: Home,
-      navigationOptions: {
-        title: "My Home"
-      }
-    },
-  },
-  { // DrawerNavigatorConfig
-    drawerWidth: 200,
-    initialRouteName: 'Home',
-    // contentComponent: SideDrawer,
-    contentOptions: {
-      activeTintColor: colors.primary,
-      activeBackgroundColor: colors.blue,
-      inactiveTintColor: colors.white,
-      style: {
-        marginVertical: 0,
-      }
-    },
-    drawerWidth: Dimensions.get('window').width - 119,
-  }
-)
+  return (
+    <View>
+      <DrawerHeader />
+      <DrawerTab
+        title='Home'
+        navigation={props.navigation}
+        selected={props.activeItemKey === 'Home'}
+        onTabSelect={() => props.navigation.navigate('Home')}
+        activeColor={props.activeTintColor}
+        inactiveColor={props.inactiveTintColor}
+        activeBgColor={props.actoveBackgroundColor}
+        iconName='ios-home' />
+
+      <DrawerTab
+        title='Leaderboard'
+        navigation={props.navigation}
+        selected={props.activeItemKey === 'Leaderboard'}
+        onTabSelect={() => props.navigation.navigate('Leaderboard')}
+        activeColor={props.activeTintColor}
+        inactiveColor={props.inactiveTintColor}
+        activeBgColor={props.actoveBackgroundColor}
+        iconName='ios-trophy' />
+    </View>
+  )
+}
+
+

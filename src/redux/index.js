@@ -1,2 +1,2 @@
 export authentication from "./modules/authentication";
-export activeFooterTab from "./modules/activeFooterTab";
+export { activeFooterTabs, setFooterTab } from "./modules/activeFooterTab";

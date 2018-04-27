@@ -4,7 +4,7 @@ App made for the react native training.
 
 ## Dependencies
 
-- react-native (installed globally)
+- react-native-cli (installed globally)
 - yarn (it is muuuuch more faster than npm installing/downloading/calculating stuff)
 - Xcode
 - Android Studio properly configurated with:
@@ -25,9 +25,21 @@ App made for the react native training.
 - Run `$ react-native link`, lo link the libraries to the project. If icons dont show up, run `$ react-native link react-native-vector-icons`.
 - To start the metro builder: `$ yarn start`
 - For mobile development:
-  - iOS `$ react-native run-ios`
+  - iOS `$ yarn ios`
   - Android:
     - Open the project in Android Studio
     - Open our configurated _AVD_.
-    - Run `$ react-native run-android`
-    - Or, after create your AVD, crete an alias, like: `alias ${YOUR_AWESOME_ALIAS}='~/Library/Android/sdk/tools/emulator -avd ${AVD_NAME} &'`. So, to run android _simulator_ just run your alias.
+    - Run `$ yarn android`
+    - Or, after create your AVD, crete an alias, like:
+
+      `alias ${YOUR_AWESOME_ALIAS}='~/Library/Android/sdk/tools/emulator -avd ${AVD_NAME} &'`
+
+    - So, to run android _simulator_ just run your alias.
+
+## Troubleshoting
+
+**Q:** Error runing `yarn ios`:
+
+    `xcrun: error: unable to find utility "instruments", not a developer tool or in PATH`
+
+**A:** [link](https://stackoverflow.com/a/39779171) to fix that issue.
