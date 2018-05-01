@@ -2,15 +2,16 @@ import React from 'react';
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux'
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
+import devTools from 'remote-redux-devtools';
 
-import { TabsNavigator, SplashContainer } from '~/containers'
+import { TabsNavigator } from '~/containers'
 import * as reducers from '~/redux'
-import { composeWithDevTools } from 'remote-redux-devtools'
 
 const store = createStore(
   combineReducers(reducers),
-  composeWithDevTools(
+  compose(
     applyMiddleware(thunk),
+    devTools()
   )
 )
 
@@ -19,8 +20,7 @@ export default class App extends React.Component {
     console.warn(store)
     return (
       <Provider store={store}>
-        {/* <TabsNavigator strore={store} /> */}
-        <SplashContainer store={store} />
+        <TabsNavigator />
       </Provider>
     )
   }
