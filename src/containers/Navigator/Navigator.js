@@ -1,14 +1,15 @@
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
 
-import AppContainer from '~/containers/App/AppContainer'
+import HomeContainer from '~/containers/Home/HomeContainer'
 import DetailsContainer from '~/containers/Details/DetailsContainer'
 import SplashContainer from '~/containers/Splash/SplashContainer'
 
+
 export default Navigator = StackNavigator(
   {
-    App: {
-      screen: AppContainer,
+    Home: {
+      screen: HomeContainer,
     },
     Splash: {
       screen: SplashContainer,
@@ -18,6 +19,6 @@ export default Navigator = StackNavigator(
     },
   },
   {
-    initialRouteName: "App",
-  }
-)
+    initialRouteName: "Home",
+  },
+);

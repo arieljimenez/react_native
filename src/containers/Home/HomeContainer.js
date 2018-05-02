@@ -4,10 +4,13 @@ import PropTypes from 'prop-types'
 
 import { Home } from '~/components'
 
-export default function HomeContainer(props) {
-  return (
-    <View>
-      <Home />
-    </View>
-  )
+export default class HomeContainer extends React.Component {
+  render() {
+    console.log(this.props)
+    return (
+      <View>
+        <Home />
+      </View>
+    )
+  }
 }

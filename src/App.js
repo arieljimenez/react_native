@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import devTools from 'remote-redux-devtools';
 
-import { TabsNavigator } from '~/containers'
+import { AppContainer } from '~/containers'
 import * as reducers from '~/redux'
 
 const store = createStore(
@@ -17,10 +17,9 @@ const store = createStore(
 
 export default class App extends React.Component {
   render() {
-    console.warn(store)
     return (
       <Provider store={store}>
-        <TabsNavigator />
+        <AppContainer />
       </Provider>
     )
   }

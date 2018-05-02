@@ -1,19 +1,10 @@
 import React, { Component } from 'react'
-import { Platform, StyleSheet, Image, Button, Text, View, Dimensions } from 'react-native'
+import { StyleSheet, Image, Button, Text, View, Dimensions } from 'react-native'
 import { LoginButton } from 'react-native-fbsdk'
 import PropTypes from 'prop-types'
-
-import { Styles, colors, fontSizes } from '~/styles'
-// const instructions = Platform.select({
-//   ios: 'Hello iOS World',
-//   android: 'Hello Andoid World',
-// });
-
 const { height, width } = Dimensions.get('window')
 
-Splash.propTypes = {
-  onLoginFinished: PropTypes.func.isRequired,
-}
+import { Styles, colors, fontSizes } from '~/styles'
 
 export default function Splash(props) {
   return (
@@ -37,6 +28,12 @@ export default function Splash(props) {
     </View>
   )
 }
+
+
+Splash.propTypes = {
+  onLoginFinished: PropTypes.func.isRequired,
+}
+
 
 const style = StyleSheet.create({
   slogan: {
