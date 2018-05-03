@@ -6,6 +6,7 @@ const { height, width } = Dimensions.get('window')
 
 import { Styles, colors, fontSizes } from '~/styles'
 
+
 export default function Splash(props) {
   return (
     <View style={Styles.container}>

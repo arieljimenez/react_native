@@ -6,8 +6,6 @@ import { Splash } from '~/components'
 import { colors } from '~/styles'
 
 import HomeContainer from '~/containers/Home/HomeContainer'
-import SplashContainer from '~/containers/Splash/SplashContainer'
-import DetailsContainer from '~/containers/Details/DetailsContainer'
 import SettingsContainer from '~/containers/Settings/SettingsContainer'
 import LeaderboardContainer from '~/containers/Leaderboard/LeaderboardContainer'
 
@@ -41,6 +39,6 @@ export default TabsNavigator = TabNavigator(
       inactiveTintColor: 'gray',
     },
     animationEnabled: true,
-    swipeEnabled: true,
+    swipeEnabled: false,
   }
 );

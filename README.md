@@ -36,6 +36,11 @@ App made for the react native training.
 
     - So, to run android _simulator_ just run your alias.
 
+
+## Deployment
+
+- {TODO}
+
 ## Troubleshoting
 
 **Q:** Error runing `yarn ios`:
