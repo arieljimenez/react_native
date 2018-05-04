@@ -5,8 +5,6 @@ import DrawerHeader from './DrawerHeader'
 import DrawerTab from './DrawerTab'
 
 export default function Drawer(props) {
-  console.warn(props)
-
   return (
     <View>
       <DrawerHeader />

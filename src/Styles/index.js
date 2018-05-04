@@ -19,6 +19,11 @@ export const Styles = StyleSheet.create({
     resizeMode: 'contain',
     height: 300,
   },
+  gear: {
+    marginLeft: 10,
+    marginRight: 10,
+    justifyContent: 'center'
+  },
 });
 
 export const colors = {
@@ -26,8 +31,8 @@ export const colors = {
   secondary: '#929292',
   blue: '#004efe',
   border: '#3f3f3f',
-  tabPrimary: '#004efe',
-  white: '#fff',
+  tabPrimary: '#929292',
+  white: '#ffffff',
   red: 'crimson'
 }
 

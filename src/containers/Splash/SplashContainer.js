@@ -18,11 +18,14 @@ class SplashContainer extends Component {
 
   render() {
     return (
+      // <View style={this.props.isAuthed === true ? {} : { flex: 1 }}>  {/* -f */}
+      //   {this.props.isAuthed === true
+      //     ? <Navigator />
+      //     : <Splash onLoginFinished={this.handleLoginFinished} />
+      //   }
+      // </View>
       <View style={{ flex: 1 }}>
-        {this.props.isAuthed === true
-          ? <Navigator />
-          : <Splash onLoginFinished={this.handleLoginFinished} />
-        }
+        <Navigator />
       </View>
     )
   }

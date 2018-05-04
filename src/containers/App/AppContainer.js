@@ -7,6 +7,8 @@ import { HomeContainer, SplashContainer } from '~/containers'
 import { PreSplash } from '~/components'
 import { firebaseAuth } from '~/config/constants'
 import { onAuthChange } from '~/redux/modules/authentication'
+
+
 class AppContainer extends Component {
 
   componentDidMount() {
@@ -19,6 +21,7 @@ class AppContainer extends Component {
         {this.props.isAuthenticating === true
           ? <PreSplash />
           : <SplashContainer
+            isAuthenticating={this.props.isAuthenticating}
             isAuthed={this.props.isAuthed}
           />}
       </View>
